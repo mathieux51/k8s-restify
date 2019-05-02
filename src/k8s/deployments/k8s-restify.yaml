@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: k8s-restify
+  name: k8s-restify
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: k8s-restify
+    spec:
+      containers:
+        - image: k8s-restify:1.0
+          imagePullPolicy: Never
+          name: k8s-restify
+          ports:
+            - containerPort: 8080
+              protocol: TCP

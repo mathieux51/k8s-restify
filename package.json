@@ -1,0 +1,23 @@
+{
+  "name": "k8s-restify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server/index.js",
+  "scripts": {
+    "start": "node src/server",
+    "docker:build": "docker build -t k8s-restify:1.0 .",
+    "docker:run": "docker run --rm -it --name restify -p 8080:8080 k8s-restify:1.0",
+    "k8s:run": "kubectl run k8s-restify --image=k8s-restify:1.0 --port=8080 --image-pull-policy=Never",
+    "k8s:expose": "kubectl expose deployment k8s-restify --type=LoadBalancer"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "restify": "^7.2.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0"
+  }
+}
