@@ -11,7 +11,7 @@
     "k8s:expose": "kubectl expose deployment k8s-restify --type=LoadBalancer"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mathieu Schmidt",
   "license": "ISC",
   "dependencies": {
     "restify": "^7.2.1"
