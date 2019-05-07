@@ -1,0 +1,20 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "k8s-restify"
+  },
+  "spec": {
+    "selector": {
+      "app": "k8s-restify"
+    },
+    "type": "NodePort",
+    "ports": [
+      {
+        "port": 8080,
+        "targetPort": 8080,
+        "protocol": "TCP"
+      }
+    ]
+  }
+}

@@ -17,9 +17,12 @@ minikube start
 minikube status
 kubectl version
 kubectl cluster-info
+kubectl get nodes
 ```
 
 ## Get pod name
+
+Pods that are running inside Kubernetes are running on a private, isolated network. By default they are visible from other pods and services within the same kubernetes cluster, but not outside that network.
 
 ```sh
 kubectl get pods -o json | jq ".items[0].metadata.name"
